@@ -1,6 +1,6 @@
 import requests,json
 
-urls = json.loads(open('video_urls.json','r').read())
+urls = json.loads(open('../json_file/video_urls.json', 'r').read())
 
 hit = 0
 for url in urls:
@@ -10,6 +10,6 @@ for url in urls:
         break
     r = requests.get(url)
 
-    with open(f'{hit}.mp4', 'wb') as file:
+    with open(f'../videos/{hit}.mp4', 'wb') as file:
         file.write(r.content)
         print(f'download video ke {hit} berhasil')

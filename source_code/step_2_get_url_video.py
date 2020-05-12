@@ -3,11 +3,11 @@ import requests, json
 url ='https://api.twitter.com/2/search/adaptive.json?'
 search = 'python programming'
 
-headers = json.loads(open('headers.json','r').read())
-params = json.loads(open('params.json','r').read())
+headers = json.loads(open('../json_file/headers.json', 'r').read())
+params = json.loads(open('../json_file/params.json', 'r').read())
 params['q'] = search
 
-cursors = json.loads(open('cursors.json','r').read())
+cursors = json.loads(open('../json_file/cursors.json', 'r').read())
 
 hitung = 0
 video_url_list = []
@@ -34,4 +34,4 @@ for cursor in cursors:
         print(video_url)
         video_url_list.append(video_url)
 
-json.dump(video_url_list, open('video_urls.json','w'))
+json.dump(video_url_list, open('../json_file/video_urls.json', 'w'))

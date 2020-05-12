@@ -4,13 +4,13 @@ url ='https://api.twitter.com/2/search/adaptive.json?'
 search = 'python programming'
 
 #set parameter dan header
-params = json.loads(open('params.json','r').read())
+params = json.loads(open('../json_file/params.json', 'r').read())
 params['q'] = search
 
 #cursor pertama tidak ada
 cursor = ''
 params['cursor'] = cursor
-headers = json.loads(open('headers.json','r').read())
+headers = json.loads(open('../json_file/headers.json', 'r').read())
 
 # buat ariabel cursors yang nantinya akan berisi cursor-cursor
 cursors = ['']
@@ -30,4 +30,4 @@ while 1:
         break
     cursors.append(cursor)
 
-json.dump(cursors, open('cursors.json','w'))
+json.dump(cursors, open('../json_file/cursors.json', 'w'))
