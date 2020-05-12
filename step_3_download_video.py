@@ -5,6 +5,7 @@ urls = json.loads(open('video_urls.json','r').read())
 hit = 0
 for url in urls:
     hit +=1
+    #untuk 2 video
     if hit == 3:
         break
     r = requests.get(url)
